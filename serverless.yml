@@ -1,0 +1,35 @@
+service: symfony-demo
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+package:
+  exclude:
+    - '*'
+    - '**'
+  include:
+    - handler.js
+    - lambda.php
+    - 'bin/**'
+    - 'config/**'
+    - 'src/**'
+    - 'var/cache/prod/**'
+    - 'vendor/**'
+
+functions:
+  # By default we create one "main" function
+  main:
+    handler: handler.handle
+    # Use the minimum amount of memory (Mb) by default to optimize costs
+    # Increase if necessary
+    memorySize: 256
+    timeout: 20
+    # The function will match all HTTP URLs
+    events:
+      - http: 'ANY /'
+      - http: 'ANY {proxy+}'
+    environment:
+      APP_ENV: 'prod'
+      APP_DEBUG: '0'
+      APP_SECRET: '67d829bf61dc5f87a73fd814e2c9f629'
