@@ -11,11 +11,11 @@
     "guzzlehttp/psr7": {
         "version": "1.4.2"
     },
-    "http-interop/http-server-handler": {
-        "version": "1.1.0"
+    "jolicode/jolinotif": {
+        "version": "v2.0.1"
     },
-    "mnapoli/phplambda": {
-        "version": "dev-master"
+    "mnapoli/bref": {
+        "version": "9999999-dev"
     },
     "mnapoli/silly": {
         "version": "1.7.0"
@@ -106,6 +106,9 @@
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.6.0"
+    },
+    "symfony/process": {
+        "version": "v4.0.9"
     },
     "symfony/psr-http-message-bridge": {
         "version": "v1.0.2"

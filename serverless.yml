@@ -10,20 +10,19 @@ package:
     - '**'
   include:
     - handler.js
-    - lambda.php
+    - bref.php
+    - '.bref/**'
+    - 'src/**'
+    - 'vendor/**'
+    - 'composer.json'
     - 'bin/**'
     - 'config/**'
-    - 'src/**'
     - 'var/cache/prod/**'
-    - 'vendor/**'
 
 functions:
   # By default we create one "main" function
   main:
     handler: handler.handle
-    # Use the minimum amount of memory (Mb) by default to optimize costs
-    # Increase if necessary
-    memorySize: 256
     timeout: 20
     # The function will match all HTTP URLs
     events:

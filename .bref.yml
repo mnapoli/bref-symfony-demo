@@ -1,0 +1,4 @@
+hooks:
+    build:
+        - 'APP_ENV=prod php bin/console cache:clear --no-debug --no-warmup'
+        - 'APP_ENV=prod php bin/console cache:warmup'

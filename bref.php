@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 use App\Kernel;
-use PhpLambda\Bridge\Symfony\SymfonyAdapter;
+use Bref\Bridge\Symfony\SymfonyAdapter;
 use Symfony\Component\Debug\Debug;
 use Symfony\Component\Dotenv\Dotenv;
 
@@ -22,7 +22,7 @@ if ($_SERVER['APP_DEBUG'] ?? ('prod' !== ($_SERVER['APP_ENV'] ?? 'dev'))) {
 }
 $kernel = new Kernel($_SERVER['APP_ENV'] ?? 'dev', (bool) ($_SERVER['APP_DEBUG'] ?? ('prod' !== ($_SERVER['APP_ENV'] ?? 'dev'))));
 
-$app = new \PhpLambda\Application;
+$app = new \Bref\Application;
 $app->httpHandler(new SymfonyAdapter($kernel));
 $app->cliHandler(new \Symfony\Bundle\FrameworkBundle\Console\Application($kernel));
 $app->run();
