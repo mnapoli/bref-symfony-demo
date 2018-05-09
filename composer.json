@@ -7,14 +7,14 @@
         "symfony/framework-bundle": "^4.0",
         "symfony/lts": "^4@dev",
         "symfony/yaml": "^4.0",
-        "mnapoli/bref": "@dev"
+        "mnapoli/bref": "~0.2.4"
     },
     "require-dev": {
         "symfony/dotenv": "^4.0"
     },
     "config": {
         "platform": {
-            "php": "7.2.2"
+            "php": "7.2.5"
         },
         "preferred-install": {
             "*": "dist"

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "cb435bd844c208477d6e5f9270f1af2c",
+    "content-hash": "dd17b4d343b8e29ecce3af62806b974a",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.55.4",
+            "version": "3.55.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "8c3093d7cbd30a94ab781777bd1f67c29b2bf7fc"
+                "reference": "ec7b972330ce65fa33875025ffec8e09e0476a8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/8c3093d7cbd30a94ab781777bd1f67c29b2bf7fc",
-                "reference": "8c3093d7cbd30a94ab781777bd1f67c29b2bf7fc",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ec7b972330ce65fa33875025ffec8e09e0476a8f",
+                "reference": "ec7b972330ce65fa33875025ffec8e09e0476a8f",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2018-04-30T23:04:55+00:00"
+            "time": "2018-05-08T16:37:41+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -325,12 +325,17 @@
         },
         {
             "name": "mnapoli/bref",
-            "version": "9999999-dev",
+            "version": "0.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mnapoli/bref.git",
+                "reference": "d8b1916698983f9ce4dded528f7b45b442339d33"
+            },
             "dist": {
-                "type": "path",
-                "url": "/Users/matthieu/dev/PHP/bref",
-                "reference": "dc9e69286e5b68d9d448aa9ac128f5a329061b7d",
-                "shasum": null
+                "type": "zip",
+                "url": "https://api.github.com/repos/mnapoli/bref/zipball/d8b1916698983f9ce4dded528f7b45b442339d33",
+                "reference": "d8b1916698983f9ce4dded528f7b45b442339d33",
+                "shasum": ""
             },
             "require": {
                 "aws/aws-sdk-php": "^3.44",
@@ -339,8 +344,10 @@
                 "php": "^7.1.0",
                 "psr/http-server-handler": "^1.0",
                 "symfony/filesystem": "^3.1|^4.0",
+                "symfony/finder": "^3.1|^4.0",
                 "symfony/http-foundation": "^3.1|^4.0",
                 "symfony/psr-http-message-bridge": "^1.0",
+                "symfony/yaml": "^3.1|^4.0",
                 "zendframework/zend-diactoros": "^1.6"
             },
             "require-dev": {
@@ -362,9 +369,11 @@
                     "src/functions.php"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "proprietary"
-            ]
+                "MIT"
+            ],
+            "time": "2018-05-09T21:42:16+00:00"
         },
         {
             "name": "mnapoli/silly",
@@ -1291,16 +1300,16 @@
         },
         {
             "name": "symfony/flex",
-            "version": "v1.0.79",
+            "version": "v1.0.80",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/flex.git",
-                "reference": "399e72968d5baa698788e6116fe0f47f269724e0"
+                "reference": "729aee08d62b47224e85b83c97e2824ff7d1735e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/flex/zipball/399e72968d5baa698788e6116fe0f47f269724e0",
-                "reference": "399e72968d5baa698788e6116fe0f47f269724e0",
+                "url": "https://api.github.com/repos/symfony/flex/zipball/729aee08d62b47224e85b83c97e2824ff7d1735e",
+                "reference": "729aee08d62b47224e85b83c97e2824ff7d1735e",
                 "shasum": ""
             },
             "require": {
@@ -1333,7 +1342,7 @@
                     "email": "fabien.potencier@gmail.com"
                 }
             ],
-            "time": "2018-04-27T05:19:26+00:00"
+            "time": "2018-05-02T19:08:56+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -2100,8 +2109,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "symfony/lts": 20,
-        "mnapoli/bref": 20
+        "symfony/lts": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
