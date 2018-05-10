@@ -18,6 +18,7 @@ package:
     - 'composer.json'
     - 'bin/**'
     - 'config/**'
+    - 'templates/**'
     - 'var/cache/prod/**'
 
 functions:

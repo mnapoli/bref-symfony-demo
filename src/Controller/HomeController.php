@@ -3,14 +3,12 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class HomeController
+class HomeController extends Controller
 {
     public function index()
     {
-        return new Response(
-            '<html><body>Hello world!</body></html>'
-        );
+        return $this->render('hello.html.twig');
     }
 }
