@@ -33,4 +33,5 @@ functions:
     environment:
       APP_ENV: 'prod'
       APP_DEBUG: '0'
+      # This should not be committed but this is just a demo here, DO NOT DO THAT
       APP_SECRET: '67d829bf61dc5f87a73fd814e2c9f629'
