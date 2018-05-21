@@ -1,6 +1,6 @@
 This is a demo of a Symfony application deployed as a serverless application on AWS Lambda.
 
-The application is deployed at the following URL:
+The application is deployed at the following URL: https://7oaryq3rzl.execute-api.eu-west-3.amazonaws.com/dev
 
 If you want to learn more:
 
