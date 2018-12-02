@@ -1,0 +1,58 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: 'Bref Symfony demo'
+
+# More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
+Globals:
+    Function:
+        Timeout: 10
+        MemorySize: 1024
+        Tags:
+            Bref: Bref
+            app: Bref Symfony demo
+
+Resources:
+    DemoFunction:
+        # See https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+        Type: AWS::Serverless::Function
+        Properties:
+            FunctionName: 'bref-symfony-demo'
+            Description: 'Bref Symfony demo'
+            CodeUri: .
+            Handler: bref.php
+            Runtime: provided
+            Layers:
+                - 'arn:aws:lambda:us-east-1:416566615250:layer:php-72:4'
+            Environment:
+                Variables:
+                    APP_ENV: prod
+                    APP_DEBUG: '0'
+                    # This should not be committed but this is just a demo here, DO NOT DO THAT
+                    APP_SECRET: '67d829bf61dc5f87a73fd814e2c9f629'
+            Events:
+                # See https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+                HttpRoot:
+                    Type: Api
+                    Properties:
+                        Path: /
+                        Method: ANY
+                HttpSubPaths:
+                    Type: Api
+                    Properties:
+                        Path: /{proxy+}
+                        Method: ANY
+            Policies:
+                -   Statement:
+                    -   Sid: SendMetric
+                        Effect: Allow
+                        Action:
+                            - cloudwatch:PutMetricData
+                        Resource: '*'
+
+Outputs:
+    DemoApi:
+        Description: "API Gateway endpoint URL for Prod stage"
+        Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+    DemoFunction:
+        Description: "Demo Lambda Function ARN"
+        Value: !GetAtt DemoFunction.Arn
