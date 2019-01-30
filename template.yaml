@@ -5,6 +5,10 @@ Description: 'Bref Symfony demo'
 # More info about Globals: https://github.com/awslabs/serverless-application-model/blob/master/docs/globals.rst
 Globals:
     Function:
+        Environment:
+            Variables:
+                APP_ENV: prod
+        # Those tags are specific to Bref, you can remove them from your application
         Tags:
             Bref: Bref
             app: Bref Symfony demo
@@ -23,11 +27,6 @@ Resources:
             Runtime: provided
             Layers:
                 - 'arn:aws:lambda:us-east-1:209497400698:layer:php-73-fpm:1'
-            Environment:
-                Variables:
-                    APP_ENV: prod
-                    # This should not be committed but this is just a demo here, DO NOT DO THAT
-                    APP_SECRET: '67d829bf61dc5f87a73fd814e2c9f629'
             Events:
                 HttpRoot:
                     Type: Api
