@@ -10,12 +10,12 @@ Globals:
             app: Bref Symfony demo
 
 Resources:
-    DemoFunction:
+    Website:
         # See https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
         Type: AWS::Serverless::Function
         Properties:
             FunctionName: 'bref-demo-symfony-website'
-            Description: 'Bref Symfony demo'
+            Description: 'Bref Symfony demo website'
             CodeUri: .
             Handler: public/index.php
             Timeout: 30 # in seconds (API Gateway has a timeout of 30 seconds)
@@ -39,6 +39,19 @@ Resources:
                     Properties:
                         Path: /{proxy+}
                         Method: ANY
+
+    Console:
+        Type: AWS::Serverless::Function
+        Properties:
+            FunctionName: 'bref-demo-symfony-console'
+            Description: 'Bref Symfony demo console'
+            CodeUri: .
+            Handler: bin/console
+            Timeout: 120 # in seconds
+            Runtime: provided
+            Layers:
+                - 'arn:aws:lambda:us-east-1:209497400698:layer:php-73:1' # PHP
+                - 'arn:aws:lambda:us-east-1:209497400698:layer:console:1' # The "console" layer
 
 Outputs:
     DemoApi:
