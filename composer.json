@@ -1,25 +1,22 @@
 {
     "require": {
-        "php": "^7.1.3",
-        "ext-iconv": "*",
-        "ext-pcntl": "*",
+        "php": "^7.2.0",
         "ext-curl": "*",
-        "mnapoli/bref": "~0.2.4",
-        "symfony/console": "^4.0",
-        "symfony/flex": "^1.0",
-        "symfony/framework-bundle": "^4.0",
-        "symfony/lts": "^4@dev",
-        "symfony/twig-bundle": "^4.0",
-        "symfony/yaml": "^4.0",
-        "ext-json": "*"
+        "ext-iconv": "*",
+        "ext-json": "*",
+        "mnapoli/bref": "dev-master",
+        "symfony/console": "*",
+        "symfony/dotenv": "*",
+        "symfony/flex": "^1.1",
+        "symfony/framework-bundle": "*",
+        "symfony/twig-bundle": "4.2.*",
+        "symfony/yaml": "*"
     },
     "require-dev": {
-        "symfony/dotenv": "^4.0"
+        "symfony/dotenv": "^4.0",
+        "symfony/web-server-bundle": "4.2.*"
     },
     "config": {
-        "platform": {
-            "php": "7.2.5"
-        },
         "preferred-install": {
             "*": "dist"
         },
@@ -31,6 +28,8 @@
         }
     },
     "replace": {
+        "paragonie/random_compat": "2.*",
+        "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",
         "symfony/polyfill-php71": "*",
         "symfony/polyfill-php70": "*",
@@ -38,7 +37,8 @@
     },
     "scripts": {
         "auto-scripts": {
-            "cache:clear": "symfony-cmd"
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
             "@auto-scripts"
@@ -47,10 +47,13 @@
             "@auto-scripts"
         ]
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "/Users/matthieu/dev/PHP/bref"
+    "conflict": {
+        "symfony/symfony": "*"
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "4.2.*"
         }
-    ]
+    }
 }
