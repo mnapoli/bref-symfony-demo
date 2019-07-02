@@ -2,6 +2,9 @@
     "aws/aws-sdk-php": {
         "version": "3.87.2"
     },
+    "bref/bref": {
+        "version": "0.4.1"
+    },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
     },
@@ -11,29 +14,8 @@
     "guzzlehttp/psr7": {
         "version": "1.5.2"
     },
-    "hoa/consistency": {
-        "version": "1.17.05.02"
-    },
-    "hoa/event": {
-        "version": "1.17.01.13"
-    },
-    "hoa/exception": {
-        "version": "1.17.01.16"
-    },
-    "hoa/fastcgi": {
-        "version": "3.17.01.10"
-    },
-    "hoa/protocol": {
-        "version": "1.17.01.14"
-    },
-    "hoa/socket": {
-        "version": "1.17.05.16"
-    },
-    "hoa/stream": {
-        "version": "1.17.02.21"
-    },
-    "mnapoli/bref": {
-        "version": "dev-master"
+    "hollodotme/fast-cgi-client": {
+        "version": "v2.7.2"
     },
     "mnapoli/silly": {
         "version": "1.7.1"
@@ -53,9 +35,6 @@
     "psr/http-message": {
         "version": "1.0.1"
     },
-    "psr/http-server-handler": {
-        "version": "1.0.1"
-    },
     "psr/log": {
         "version": "1.1.0"
     },
@@ -64,9 +43,6 @@
     },
     "ralouphie/getallheaders": {
         "version": "2.0.5"
-    },
-    "riverline/multipart-parser": {
-        "version": "1.2.0"
     },
     "symfony/cache": {
         "version": "v4.2.2"
@@ -134,9 +110,6 @@
     "symfony/process": {
         "version": "v4.2.2"
     },
-    "symfony/psr-http-message-bridge": {
-        "version": "v1.1.0"
-    },
     "symfony/routing": {
         "version": "4.2",
         "recipe": {
@@ -175,8 +148,5 @@
     },
     "twig/twig": {
         "version": "2.x-dev"
-    },
-    "zendframework/zend-diactoros": {
-        "version": "1.8.6"
     }
 }
